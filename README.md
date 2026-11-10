@@ -79,10 +79,10 @@ npm ci
 npm run desktop:dev
 
 # No Windows: instalador NSIS por usuário
-npm run desktop:build -- --locked --bundles nsis
+npm run desktop:build -- --bundles nsis -- --locked
 
 # No Linux: AppImage e pacote Debian
-npm run desktop:build -- --locked --bundles deb,appimage
+npm run desktop:build -- --bundles deb,appimage -- --locked
 ```
 
 Os instaladores são gerados em `src-tauri/target/release/bundle/`. O CI prepara esses arquivos como artefatos para conferência; a publicação no catálogo assinado do OpenStruct será feita pelo publicador central após o cadastro do produto. Veja [docs/DESKTOP.md](docs/DESKTOP.md) para arquitetura, validação e preparação das releases.

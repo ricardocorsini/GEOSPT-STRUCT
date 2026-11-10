@@ -29,11 +29,13 @@ npm run desktop:dev
 
 ```bash
 # Executar no respectivo sistema operacional
-npm run desktop:build -- --locked --bundles nsis
-npm run desktop:build -- --locked --bundles deb,appimage
+npm run desktop:build -- --bundles nsis -- --locked
+npm run desktop:build -- --bundles deb,appimage -- --locked
 ```
 
 O build desktop embute `dist/`; o aplicativo instalado não inicia um servidor Vite nem exige Node ou Rust do usuário. No Linux, o AppImage depende das bibliotecas usuais do sistema e, conforme a distribuição, de FUSE ou extração do AppImage. O pacote `.deb` é uma alternativa para instalação pelo gerenciador de pacotes.
+
+`--locked` é uma opção do Cargo, não do Tauri. O segundo separador `--` acima o encaminha ao compilador; mantenha opções como `--bundles` antes desse separador.
 
 ## Compatibilidade com os fluxos originais
 
